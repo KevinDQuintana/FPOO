@@ -1,0 +1,6 @@
+Se solicita conocer la distancia entre Mario y Koopa. Asumiremos que el mundo inicia en la posicion en X = 0 y se extiende de forma indefinida hacia la derecha.
+
+La posicion de Mario es 5.
+La posicion de Koopa es 10.
+
+La distancia entre Mario y Koopa es de 5 unidades.
