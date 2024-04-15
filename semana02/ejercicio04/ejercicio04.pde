@@ -58,6 +58,4 @@ void setup() {
   println("x: " + x);
   println("y: " + y);
   println("(x^2 + y^2)^(1 / 2) = " + result);
-  
-  //Punto E
 }
