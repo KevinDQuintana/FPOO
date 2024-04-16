@@ -1,20 +1,22 @@
 class Player {
-  float posX;
-  float posY;
-  float PWidth;
-  float PHeight;
+  float x;
+  float y;
+  float pWidth;
+  float pHeight;
+
   float speed;
 
-  Player(float x, float y, float w, float h, float s) {
-    posX = x;
-    posY = y;
-    PWidth = w;
-    PHeight = h;
-    speed = s;
+  Player(float posX, float posY) {
+    x = posX;
+    y = posY;
+    pWidth = 100;
+    pHeight = 25;
+
+    speed = 0;
   }
 
   public void draw() {
-    rect(posX, posY, PWidth, PHeight);
+    rect(x, y, pWidth, pHeight);
   }
 }
 
@@ -24,35 +26,44 @@ long timeB;
 float deltaTime;
 
 void setup() {
+  frameRate(60);
   size(800, 600);
+  textSize(16);
+  fill(255);
   timeA = millis();
-  player = new Player(width / 2 - 50, height - 100, 100, 25, 300);
+  player = new Player((width / 2) - 50, height - 100);
 }
 
 void draw() {
   timeB = millis();
-  deltaTime = (timeB - timeA) / 1000.0;
+  deltaTime = timeB - timeA;
   timeA = timeB;
-  
-  println(deltaTime);
-  
+
   if (keyPressed) {
     if (key == 'a') {
-      player.posX -= player.speed * deltaTime;
+      player.speed = constrain(player.speed - 0.08, -2, 0);
     } else if (key == 'd') {
-      player.posX += player.speed * deltaTime;
+      player.speed = constrain(player.speed + 0.08, 0, 2);
+    }
+  } else {
+    if (player.speed < 0) {
+      player.speed = constrain(player.speed + 0.02, -10, 0);
+    } else if (player.speed > 0) {
+      player.speed = constrain(player.speed - 0.02, 0, 10);
     }
   }
   
+  player.x += player.speed * deltaTime;
+  
+  if (player.x < 0) {
+    player.x = 0;
+    player.speed = 0;
+  } else if (player.x + player.pWidth > width) {
+    player.x = width - player.pWidth;
+    player.speed = 0;
+  }
+
   background(50);
+  text("FPS: " + frameRate, 0, 16);
   player.draw();
 }
-
-//void keyPressed() {
-//  if (key == 97 && player.posX > 0) {
-//    player.posX = player.posX - player.speed * deltaTime;
-//  }
-//  if (key == 100 && player.posX + player.PWidth < width) {
-//    player.posX = player.posX + player.speed * deltaTime;
-//  }
-//}
