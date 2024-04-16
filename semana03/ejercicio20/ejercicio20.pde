@@ -8,14 +8,14 @@ void setup() {
   int marginX = 20;
   int marginY = 20;
   int rectWidth = 40;
-  int rectHeigth = 20;
+  int rectHeight = 20;
 
   for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 7; j++) {
-      rect(posX, posY, rectWidth, rectHeigth);
+      rect(posX, posY, rectWidth, rectHeight);
       posX = posX + marginX + rectWidth;
     }
     posX = 20;
-    posY = posY + marginY + rectHeigth;
+    posY = posY + marginY + rectHeight;
   }
 }
