@@ -1,0 +1,9 @@
+https://research.ncl.ac.uk/game/mastersdegree/gametechnologies/physicstutorials/4collisiondetection/Physics%20-%20Collision%20Detection.pdf | Physics - Collision Detection
+
+https://research.ncl.ac.uk/game/mastersdegree/gametechnologies/physicstutorials/ | Physics Tutorials
+
+https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/swept-aabb-collision-detection-and-response-r3084/ | Swept AABB Collision Detection
+
+https://www.amanotes.com/post/using-swept-aabb-to-detect-and-process-collision | Swept AABB
+
+https://deepnight.net/tutorials/ | Deepnight Games
