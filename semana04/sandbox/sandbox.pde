@@ -100,9 +100,11 @@ void draw() {
   
   line(rayPoint.x, rayPoint.y, mouseX, mouseY);
   if (rayVsRect(rayPoint, rayDirection, rectOne) && tHitNear < 1) {
-    circle(contactPoint.x, contactPoint.y, 10);
     fill(255, 0, 0);
     rectOne.draw();
+    circle(contactPoint.x, contactPoint.y, 10);
+    line(contactPoint.x, contactPoint.y,
+         contactPoint.x + contactNormal.x * 30, contactPoint.y + contactNormal.y * 30);
   } else {
     fill(255, 255, 255);
     rectOne.draw();
