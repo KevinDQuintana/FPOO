@@ -14,7 +14,7 @@ void draw() {
 void keyPressed() {
   if (key == 32 && lastKey != key) {
     lastKey = keyCode;
-    Dice dice = new Dice(0, 0); //<>//
+    Dice dice = new Dice(0, 0); //<>// //<>//
     dice.roll();
     while (dice.getRollValue() == lastRoll) {
       dice.roll();
