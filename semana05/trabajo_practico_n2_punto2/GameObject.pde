@@ -4,8 +4,8 @@ abstract class GameObject {
   
   GameObject() {}
   GameObject(float x, float y) {
-    this.posX = x;
-    this.posY = y;
+    this.setPosX(x);
+    this.setPosY(y);
   }
   
   public float getPosX() {

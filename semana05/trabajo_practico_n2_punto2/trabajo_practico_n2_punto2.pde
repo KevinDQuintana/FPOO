@@ -5,16 +5,17 @@ GameBoard gameBoard;
 
 void setup() {
   size(600, 600);
-  gameBoard = new GameBoard(0, 0);
+  gameBoard = new GameBoard(width / 2, height / 2, 500, 500);
 }
 void draw() {
   background(50);
+  gameBoard.display();
 }
 
 void keyPressed() {
   if (key == 32 && lastKey != key) {
     lastKey = keyCode;
-    Dice dice = new Dice(0, 0); //<>// //<>//
+    Dice dice = new Dice(0, 0); //<>//
     dice.roll();
     while (dice.getRollValue() == lastRoll) {
       dice.roll();
